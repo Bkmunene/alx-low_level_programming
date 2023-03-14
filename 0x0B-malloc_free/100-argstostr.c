@@ -1,19 +1,18 @@
-#include <stdio.h>
-#include <stdlib.h>
 #include "main.h"
+#include <stdlib.h>
 
 /**
- * argstostr - concatenates all the arguments of your program
- * @ac: Argument count
- * @av: Argument vector
- * Return: Pointer to a new string
- *	   NULL if ac == 0 or av == NULL
+ * argstostr - Concatenates all arguments of the program.
+ * @ac: The number of arguments passed to the program
+ * @av: An array of pointers to the arguments
+ * Return: If ac == 0, av == NULL, or the function fails - NULL.
+ *         Otherwise - a pointer to the new string.
  */
 
 char *argstostr(int ac, char **av)
 {
 	char *str;
-	int arg, byte, index, size;
+	int arg, byte, index, size = ac;
 
 	if (ac == 0 || av == NULL)
 		return (NULL);
